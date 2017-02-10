@@ -1,0 +1,53 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.6.17
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+--
+-- Create schema business
+--
+
+CREATE DATABASE IF NOT EXISTS business;
+USE business;
+
+--
+-- Definition of table `business_ids`
+--
+
+DROP TABLE IF EXISTS `business_ids`;
+CREATE TABLE `business_ids` (
+  `id` varchar(128) NOT NULL,
+  `match` varchar(128) NOT NULL,
+  `keyword` varchar(128) NOT NULL,
+  `domain` varchar(8) NOT NULL,
+  PRIMARY KEY (`id`,`match`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Definition of table `keywords`
+--
+
+DROP TABLE IF EXISTS `keywords`;
+CREATE TABLE `keywords` (
+  `keyword` varchar(128) NOT NULL,
+  `domain` varchar(8) NOT NULL,
+  PRIMARY KEY (`keyword`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
